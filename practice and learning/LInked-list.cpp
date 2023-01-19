@@ -11,6 +11,8 @@ public:
 
 };
 
+// singly linked list
+
 class LinkedList
 {
 public:
@@ -126,6 +128,46 @@ public:
         a->nxt = newNode;
     }
 
+    void InsertAfterSpecificValue(int value, int data)
+    {
+        Node * a = head;
+        while(a!=NULL)
+        {
+            if(a->data == value)
+            {
+                break;
+            }
+            a = a->nxt;
+        }
+
+        if(a->nxt == NULL)
+        {
+            cout<<value<<" does not exist in linked-list"<<"\n";
+            return;
+        }
+        sz++;
+        Node * newNode = CreateNewNode(data);
+        newNode->nxt = a->nxt;
+        a->nxt = newNode;
+
+    }
+
+    void ReversePrint2(Node * a)
+    {
+        if(a == NULL)
+        {
+            return;
+        }
+        ReversePrint2(a->nxt);
+        cout<<a->data<<" ";
+    }
+
+    void ReversePrint()
+    {
+        ReversePrint2(head);
+        cout<<"\n";
+    }
+
     void DeleteAtHead()
     {
         if(head == NULL)
@@ -176,20 +218,24 @@ int main()
     l.Traverse();
 
 //    cout<<l.SearchDistictValue(20)<<"\n";
-    l.SearchAllValue(10);
+//    l.SearchAllValue(10);
+//    cout<<l.getSize()<<"\n";
+//
+//    l.InsertAtAnyIndex(1, 23);
+//
+//    l.Traverse();
+//
+//    cout<<l.getSize()<<"\n";
+//
+//    l.DeleteAtHead();
+//    l.Traverse();
+//    l.DeleteAnyIndex(1);
+//    l.Traverse();
+    l.InsertAfterSpecificValue(10, 55);
+    l.Traverse();
     cout<<l.getSize()<<"\n";
+    l.ReversePrint();
 
-    l.InsertAtAnyIndex(1, 23);
-
-    l.Traverse();
-
-    cout<<l.getSize()<<"\n";
-
-    l.DeleteAtHead();
-    l.Traverse();
-    l.DeleteAnyIndex(1);
-    l.Traverse();
-     cout<<l.getSize()<<"\n";
 
 
     return 0;
