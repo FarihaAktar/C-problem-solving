@@ -29,12 +29,12 @@ int main()
                 break;
             }
         }
-        cout<<"considering  "<<i<<": ";
-        for(int i=0; i<n; i++)
-        {
-            cout<<a[i]<<" ";
-        }
-        cout<<"\n";
+//        cout<<"considering  "<<i<<": ";
+//        for(int i=0; i<n; i++)
+//        {
+//            cout<<a[i]<<" ";
+//        }
+//        cout<<"\n";
     }
     cout<<"After Sorting: ";
     for(int i=0; i<n; i++)

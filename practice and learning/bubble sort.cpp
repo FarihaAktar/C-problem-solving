@@ -17,27 +17,27 @@ int main()
     for(int pass = 0; pass<n; pass++)
     {
         int last = n-1-pass;
-            bool sorted = true;
+        bool sorted = true;
         for(int j = 0; j<=last-1; j++)
         {
-//            sorted = true;
-//            cout<<"before sort "<<pass<<": ";
-//            for(int i=0; i<n; i++)
-//            {
-//                cout<<a[i]<<" ";
-//            }
-//            cout<<"--> ";
+            sorted = true;
+            cout<<"before sort "<<pass<<": ";
+            for(int i=0; i<n; i++)
+            {
+                cout<<a[i]<<" ";
+            }
+            cout<<"--> ";
             if(a[j]  > a[j+1])
             {
                 swap(a[j], a[j+1]);
                 sorted = false;
             }
-//            cout<<"After sort "<<pass<<": ";
-//            for(int i=0; i<n; i++)
-//            {
-//                cout<<a[i]<<" ";
-//            }
-//            cout<<"\n";
+            cout<<"After sort "<<pass<<": ";
+            for(int i=0; i<n; i++)
+            {
+                cout<<a[i]<<" ";
+            }
+            cout<<"\n";
         }
         if(sorted)
         {
@@ -50,6 +50,8 @@ int main()
         }
         cout<<"\n";
     }
+
+
 
     cout<<"After Sorting :";
     for(int i=0; i<n; i++)
