@@ -78,6 +78,25 @@ public:
         sz++;
     }
 
+    // delete the value at head. O(1)
+    void DeleteAtHead()
+    {
+        if(head == NULL)
+        {
+            return;
+        }
+
+        node * a  = head;
+        node * b = head->nxt;
+        delete a;
+        if(b != NULL)
+        {
+            b->prv = NULL;
+        }
+        head = b;
+        sz--;
+    }
+
     //Deletes the given index O(n)
     void Delete(int index)
     {
@@ -229,24 +248,74 @@ public:
 };
 
 
+class Stack
+{
+    public:
+    DoublyLinkedList dl;
+    Stack()
+    {
+
+    }
+
+    int top()
+    {
+        if(dl.getSize() ==0)
+        {
+            cout<<"Stack is empty!\n";
+            return -1;
+        }
+
+        return dl.head->data;
+    }
+
+    void push(int val)
+    {
+        dl.InsertAtHead(val);
+    }
+
+    void pop()
+    {
+        if(dl.getSize() ==0)
+        {
+            cout<<"Stack is empty!\n";
+            return;
+        }
+        dl.DeleteAtHead();
+    }
+};
+
+
+
 int main()
 {
-    DoublyLinkedList dl;
+        Stack st;
+    st.push(2);
+    cout<<st.top()<<"\n";
+    st.push(3);
+    cout<<st.top()<<"\n";
+
+    st.pop();
+    cout<<st.top()<<"\n";
+    st.pop();
+    cout<<st.top()<<"\n";
+
+
+//    DoublyLinkedList dl;
 //    dl.InsertAtHead(10);
 //    dl.InsertAtHead(5);
 //    dl.InsertAtHead(1);
 
-    dl.InsertAtHead(1);
-    dl.InsertAtHead(0);
-    dl.InsertAtHead(2);
-    dl.InsertAtHead(0);
-    dl.InsertAtHead(0);
+//    dl.InsertAtHead(1);
+//    dl.InsertAtHead(0);
+//    dl.InsertAtHead(2);
+//    dl.InsertAtHead(0);
+//    dl.InsertAtHead(0);
 
 
-    dl.Traverse();
+//    dl.Traverse();
 //    dl.Swap(1, 4);
-    dl.deleteZero();
-    dl.Traverse();
+//    dl.deleteZero();
+//    dl.Traverse();
 //    dl.Insert(2,100);
 //
 //    dl.Traverse();

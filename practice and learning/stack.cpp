@@ -11,5 +11,6 @@ int main()
     numst.pop();
     cout<<numst.top()<<"\n";
     cout<<numst.empty()<<"\n";
+
     return 0;
 }
